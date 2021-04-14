@@ -1,6 +1,5 @@
 import React from "react";
-import About from "../../About/About";
-import Footer from "../../Footer/Footer";
+import Cards from "../../Cards/Cards";
 import HeroSection from "../../HeroSection/HeroSection";
 import Testimonials from "../../Testimonials/Testimonials";
 import { homeObjOne, homeObjThree } from "./Data";
@@ -9,10 +8,10 @@ function Home() {
   return (
     <>
       <HeroSection {...homeObjOne} />
-      <About />
+      <Cards />
       <HeroSection {...homeObjThree} />
       <Testimonials />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

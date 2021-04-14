@@ -10,7 +10,7 @@ export const homeObjOne = {
   img: "images/groceryBag.png",
   alt: "Budget",
   description:
-    "We help you remember which items to buy at the store and cross them out when done",
+    "The best way to create and share a grocery shopping list and organize your recipes",
 };
 export const homeObjTwo = {
   lightBg: false,
@@ -30,13 +30,13 @@ export const homeObjThree = {
   lightBg: false,
   lightText: false,
   lightTextDesc: false,
-  topLine: "EASY SETUP",
-  headline: "Stay focussed on your financial goals",
+  // topLine: "EASY SETUP",
+  headline: "List, Sort, Complete ",
   description:
-    "See where all your money goes by easily adding your credit card details all you need to do is add your information and you're ready to go.",
+    "List all the essentials needed for the long quarantine  and purchase online to avoid catching the virus",
   buttonLabel: "Find Out More",
   imgStart: "start",
-  img: "images/svg-2.svg",
+  img: "images/grocery4.png",
   alt: "Vault",
 };
 

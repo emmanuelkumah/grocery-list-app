@@ -5,7 +5,7 @@ const Data = [
     job: "Estate developer",
     image: "https://source.unsplash.com/sibVwORYqs0",
     text:
-      "One of the best Fashion design institute in Ghana chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+      "One of the best grocery app  in Ghana chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ const Data = [
     job: "Research  Assistant",
     image: "https://source.unsplash.com/_cvwXhGqG-o",
     text:
-      "The place for ambitious people who are ready to take fashion designing to another level lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
+      "List all your grocery and purchase them , the place for ambitious people who are ready to take fashion designing to another level lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
   },
   {
     id: 3,
