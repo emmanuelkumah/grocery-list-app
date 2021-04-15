@@ -12,8 +12,6 @@ import fire from "./services/firebase";
 import firebase from "firebase";
 
 function App() {
-  // console.log(fire);
-  //define the states
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
