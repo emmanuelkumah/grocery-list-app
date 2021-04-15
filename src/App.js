@@ -6,19 +6,19 @@ import Footer from "./components/Footer/Footer";
 import NavBar from "./components/Navigation/NavBar";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Home from "./components/pages/Home/Home";
-import SignUpSignIn from "./components/SignUp/SignUpSignIn";
+import SignUp from "./components/SignUp/SignUp";
 import Testimonials from "./components/Testimonials/Testimonials";
 // import firebase from "./services/firebase";
 
 function App() {
   //define the states
-  // const [user, setUser] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [name, setName] = useState("");
-  // const [emailError, setEmailError] = useState("");
-  // const [passwordError, setPasswordError] = useState("");
-  // const [hasAccount, setHasAccount] = useState(false);
+  const [user, setUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [hasAccount, setHasAccount] = useState(false);
 
   return (
     <>
@@ -31,7 +31,7 @@ function App() {
           <Route path="/testimonials" component={Testimonials} />
           <Route path="/about" component={Cards} />
           <Route path="/sign-up">
-            <SignUpSignIn />
+            <SignUp />
           </Route>
         </Switch>
         <Footer />
