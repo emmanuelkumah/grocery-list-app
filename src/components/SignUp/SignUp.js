@@ -1,40 +1,67 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
-import { FiInstagram } from "react-icons/fi";
 import { FaGoogle } from "react-icons/fa";
-import { SiTiktok } from "react-icons/si";
 import "./SignUp.css";
 
-function SignUp() {
+function SignUp(
+  // name,
+  // setName,
+  userName,
+  setUserName,
+  email,
+  setEmail,
+  password,
+  setPassword,
+  emailError,
+  passwordError,
+  signInWithGoogle,
+  handleSignUp,
+  handleSignIn
+) {
+  //set values for sign up
   const [signUp, setSignUp] = useState(false);
 
   //Switch between signUp and signInform
   const toggleSignUp = () => {
     setSignUp(!signUp);
   };
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
     <section className="formSection">
       <div className={signUp ? "wrapper right-panel-active" : "wrapper"}>
         <div className="form-container sign-up-container">
-          <form>
+          <form onSubmit={handleSubmit}>
             <h1 className="heading">Sign Up</h1>
-            <div className="social-container">
+            {/* <div className="social-container">
               <h4>Sign Up With Google</h4>
-              <Link to="/" className="social">
+              <button className="social" onClick={signInWithGoogle}>
+                <span> Sign Up with Google</span> <br></br>
                 <FaGoogle />
-              </Link>
+              </button>
             </div>
-            <span>or use your email for registration</span>
-            <input autoFocus type="text" placeholder="Enter  Your Name" />
+            <span>or use your email for registration</span> */}
+            <input
+              type="text"
+              placeholder="Enter Your Name"
+              value={userName}
+              // onChange={(event) => setUserName(event.target.value)}
+            />
             <input autoFocus type="email" placeholder="Enter Your Email" />
+            <p className="errorMsg">{emailError}</p>
             <input
               autoFocus
               type="password"
               placeholder="Enter Your Password"
             />
-            <button className="btn__signUp" type="submit">
+
+            <p className="errorMsg">{passwordError}</p>
+            <button
+              className="btn__signUp"
+              type="submit"
+              onClick={handleSignUp}
+            >
               Sign Up
             </button>
           </form>
@@ -44,15 +71,19 @@ function SignUp() {
             <h1 className="heading">Sign In</h1>
             <div className="social-container">
               <h4>Sign in with Google</h4>
-              <Link to="/" className="social">
+              <button className="social">
                 <FaGoogle />
-              </Link>
+              </button>
             </div>
             <span>or use your account</span>
 
-            <input autoFocus type="email" placeholder="Email" />
+            <input autoFocus type="email" placeholder="Email" value={email} />
+            <p className="errorMsg">{emailError}</p>
             <input autoFocus type="password" placeholder="Password" />
-            <button className="btn__signUp">Sign In</button>
+            <p className="errorMsg">{passwordError}</p>
+            <button className="btn__signUp" onClick={handleSignIn}>
+              Sign In
+            </button>
           </form>
         </div>
         <div className="overlay-container">

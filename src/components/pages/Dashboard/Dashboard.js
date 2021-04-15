@@ -1,10 +1,14 @@
 import React from "react";
+import Header from "../../Grocery/Header/Header";
+import "./Dashboard.css";
 
 function Dashboard() {
   return (
-    <div>
-      <h1>This is the dashboard</h1>
-    </div>
+    <main>
+      <section className="dashboard_container">
+        <Header />
+      </section>
+    </main>
   );
 }
 
