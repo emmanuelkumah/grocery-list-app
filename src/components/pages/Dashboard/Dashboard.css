@@ -48,7 +48,7 @@ main {
   line-height: 10px;
   padding: 8px;
   position: absolute;
-  top: 59%;
+  top: 50%;
   left: 48%;
   border-radius: 50%;
   cursor: pointer;
@@ -56,25 +56,6 @@ main {
 .add_Btn:hover {
   background: #de3c4b;
 }
-/* .delete-btn {
-  cursor: pointer;
-  background-color: #c81d25;
-  border: 0;
-  color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translate(-100%, -50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-} */
-
-/* .list li:hover .delete-btn {
-  opacity: 1;
-} */
 
 /* Action Buttons */
 .actionBtn {
@@ -144,15 +125,15 @@ input[type="number"] {
   display: block;
   font-size: 1.4rem;
   padding: 10px;
-  width: 70%;
+  width: 50vw;
   outline: none;
 }
 .add_Item {
   background-color: #faa916;
   background-image: linear-gradient(62deg, #faa916 0%, #ef8a17 100%);
-
+  margin: 20px auto;
   padding: 10px;
-  width: 20%;
+  /* width: 20%; */
   font-size: 1.3rem;
   color: #fff;
   border: none;
@@ -163,4 +144,9 @@ input[type="number"] {
   cursor: pointer;
   background-color: #8acb0d;
   background-image: linear-gradient(45deg, #8acb0d 0%, #6ab616 100%);
+}
+/* mark item as completed */
+.mark_complete {
+  text-decoration-line: line-through;
+  text-decoration-color: #ff4364;
 }

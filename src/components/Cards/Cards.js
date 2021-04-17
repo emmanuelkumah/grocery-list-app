@@ -1,6 +1,5 @@
 import React from "react";
 import { GiPaperPlane } from "react-icons/gi";
-import { GrBasket } from "react-icons/gr";
 import { FiUsers } from "react-icons/fi";
 import "./Cards.css";
 import { BiShoppingBag } from "react-icons/bi";

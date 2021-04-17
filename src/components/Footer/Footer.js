@@ -11,9 +11,6 @@ import {
 // import { Button } from "../../Button/Button";
 import { GiShoppingBag } from "react-icons/gi";
 import { BiMailSend, BiMapPin } from "react-icons/bi";
-
-import { GiTakeMyMoney } from "react-icons/gi";
-import { Button } from "../Button/Button";
 import { FiPhoneCall } from "react-icons/fi";
 
 function Footer() {

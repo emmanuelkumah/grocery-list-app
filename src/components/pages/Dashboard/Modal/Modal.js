@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaTimes } from "react-icons/fa";
+import GroceryInput from "../Grocery/GroceryInput";
 
-function Modal({ closeModal, isModalOpen }) {
+function Modal({ closeModal, isModalOpen, item, setItem, handleFormSubmit }) {
   return (
     <section
       className={`${
@@ -10,8 +11,11 @@ function Modal({ closeModal, isModalOpen }) {
     >
       <div className="modal-container">
         <h2>What you you like to buy today</h2>
-        <input type="text" placeholder="Enter item" />
-        <button className="add_Item">Add Item </button>
+        <GroceryInput
+          item={item}
+          setItem={setItem}
+          handleFormSubmit={handleFormSubmit}
+        />
         <button className="close-modal-btn" onClick={closeModal}>
           <FaTimes />
         </button>

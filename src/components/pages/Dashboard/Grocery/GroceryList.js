@@ -1,7 +1,7 @@
 import React from "react";
 import Grocery from "./Grocery";
 
-function GroceryList({ groceries }) {
+function GroceryList({ groceries, removeItem, completeItem }) {
   return (
     <div>
       <ul className="list">
@@ -10,7 +10,10 @@ function GroceryList({ groceries }) {
             <Grocery
               key={grocery.id}
               grocery={grocery.item}
-              quantity={grocery.quantity}
+              removeItem={removeItem}
+              completeItem={completeItem}
+              id={grocery.id}
+              isComplete={grocery.isComplete}
             />
           );
         })}
