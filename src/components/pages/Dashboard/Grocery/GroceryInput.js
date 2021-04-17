@@ -1,6 +1,6 @@
 import React from "react";
 
-function GroceryInput({ item, setItem, handleFormSubmit }) {
+function GroceryInput({ item, setItem, handleFormSubmit, editing }) {
   return (
     <div>
       <form>
@@ -10,9 +10,20 @@ function GroceryInput({ item, setItem, handleFormSubmit }) {
           value={item}
           onChange={(event) => setItem(event.target.value)}
         />
-        <button className="add_Item" onClick={handleFormSubmit}>
-          Add Item{" "}
-        </button>
+        {editing ? (
+          <button type="submit" className="add_Item" onClick={handleFormSubmit}>
+            Save Edit
+          </button>
+        ) : (
+          <button
+            type="submit"
+            disabled={!item}
+            className="add_Item"
+            onClick={handleFormSubmit}
+          >
+            Add Item
+          </button>
+        )}
       </form>
     </div>
   );

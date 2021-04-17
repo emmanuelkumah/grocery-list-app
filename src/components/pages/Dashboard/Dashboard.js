@@ -10,6 +10,8 @@ import firebase from "firebase";
 function Dashboard() {
   const [item, setItem] = useState("");
   const [complete, setComplete] = useState(false);
+  const [editing, setIsEditing] = useState(false);
+  const [addedGrocery, setAddedGrocery] = useState("");
   const [groceries, SetGroceries] = useState([]);
 
   //close and open modal
@@ -29,6 +31,7 @@ function Dashboard() {
     const unsubscribe = fire
       .firestore()
       .collection("groceries")
+      .orderBy("created", "desc")
       .onSnapshot((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -78,6 +81,30 @@ function Dashboard() {
         console.log("error updating", error);
       });
   };
+  //update an item
+  const updateItem = (id, grocery) => {
+    setIsEditing(true); //update the edting state
+    setAddedGrocery(grocery); //pass the grocery to addedGrocery state
+    //open the input modal
+    openModal();
+    //update the item with the new value
+    fire
+      .firestore()
+      .collection("groceries")
+      .doc(id)
+      .set(
+        {
+          item: item,
+        },
+        { merge: true }
+      )
+      .then(() => {
+        console.log("document merged");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <main>
@@ -88,6 +115,8 @@ function Dashboard() {
           item={item}
           setItem={setItem}
           handleFormSubmit={handleFormSubmit}
+          editing={editing}
+          addedGrocery={addedGrocery}
         />
       ) : (
         <section className="dashboard_container">
@@ -100,6 +129,8 @@ function Dashboard() {
             groceries={groceries}
             removeItem={removeItem}
             completeItem={completeItem}
+            openModal={openModal}
+            updateItem={updateItem}
           />
         </section>
       )}

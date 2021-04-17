@@ -2,7 +2,15 @@ import React from "react";
 import { FaTimes } from "react-icons/fa";
 import GroceryInput from "../Grocery/GroceryInput";
 
-function Modal({ closeModal, isModalOpen, item, setItem, handleFormSubmit }) {
+function Modal({
+  closeModal,
+  isModalOpen,
+  item,
+  setItem,
+  handleFormSubmit,
+  editing,
+  addedGrocery,
+}) {
   return (
     <section
       className={`${
@@ -10,11 +18,17 @@ function Modal({ closeModal, isModalOpen, item, setItem, handleFormSubmit }) {
       }`}
     >
       <div className="modal-container">
-        <h2>What you you like to buy today</h2>
+        {editing ? (
+          <h2>Edit {addedGrocery}</h2>
+        ) : (
+          <h2>What would you like to buy</h2>
+        )}
+
         <GroceryInput
           item={item}
           setItem={setItem}
           handleFormSubmit={handleFormSubmit}
+          editing={editing}
         />
         <button className="close-modal-btn" onClick={closeModal}>
           <FaTimes />
