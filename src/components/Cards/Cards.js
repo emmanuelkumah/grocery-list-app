@@ -15,7 +15,7 @@ function Cards() {
         </p>
       </div>
 
-      <main className="card-grid">
+      <section className="card-grid">
         <article className="card-content">
           <div className="card-desc">
             <BiShoppingBag className="card-icons" />
@@ -50,7 +50,7 @@ function Cards() {
             </p>
           </div>
         </article>
-      </main>
+      </section>
     </div>
   );
 }

@@ -1,8 +1,7 @@
 .header_container {
   padding: 20px 20px;
   width: 100%;
-  /* background: linear-gradient(rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)),
-    url("headerImg.jpg"); */
+
   background-size: 100%;
   background-repeat: no-repeat;
   background-image: radial-gradient(
@@ -15,11 +14,19 @@
     ),
     url("headerImg.jpg");
 }
-.intro_msg {
+.header_greetings {
   margin: 10px;
   padding: 10px 30px;
+}
+.header_greetings > h2 {
   color: #fff;
-  font-size: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.header_greetings > p {
+  color: #fff;
+  text-align: center;
+  font-size: 1.3rem;
 }
 .addBtn {
   background-color: brown;

@@ -14,6 +14,7 @@ main {
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   border-radius: 5px;
   padding: 2.5rem 2rem;
+  position: relative;
 }
 
 .list {
@@ -32,11 +33,13 @@ main {
   font-size: 1.6rem;
   display: flex;
   justify-content: space-between;
-  position: relative;
+
   padding: 10px;
   margin: 20px 0;
   border-radius: 20px 0px;
-  /* border-radius: 20px; */
+}
+.dashboard_header {
+  position: relative;
 }
 .add_Btn {
   background-color: #ff4365;
@@ -48,11 +51,13 @@ main {
   line-height: 10px;
   padding: 8px;
   position: absolute;
-  top: 50%;
-  left: 48%;
+  bottom: -10%;
+  left: 45%;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 100;
 }
+
 .add_Btn:hover {
   background: #de3c4b;
 }
@@ -62,17 +67,29 @@ main {
   margin: 10px;
 }
 .actionBtn:hover {
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .complete {
   color: #6ab615;
 }
+.complete:hover {
+  color: #222;
+}
 .edit {
   color: green;
+}
+.edit:hover,
+:focus {
+  color: #222;
 }
 .delete {
   color: red;
 }
+.delete:hover,
+:focus {
+  color: #222;
+}
+
 /*
 =============== 
 Modal

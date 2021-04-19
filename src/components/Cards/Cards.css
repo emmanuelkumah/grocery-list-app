@@ -47,17 +47,3 @@
   background-color: #85ffbd;
   background-image: linear-gradient(45deg, #85ffbd 0%, #71ba13 100%);
 }
-
-/* 
-.card:hover {
-	top: -3px;
-	left: -3px;
-  box-shadow: 3px 3px 15px 0px rgba(82, 82, 82, 0.85);
-}
-.card:active {
-	top: 2px;
-	left: 2px;
-	background-color: #e50000;
-	box-shadow: inset 0 0 10px rgba(82, 82, 82, 0.85);
-}
- */

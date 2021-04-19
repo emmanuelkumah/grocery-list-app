@@ -120,9 +120,11 @@ function Dashboard() {
         />
       ) : (
         <section className="dashboard_container">
-          <Header />
-          <div className="add_Btn" onClick={openModal}>
-            <AiOutlinePlus />
+          <div className="dashboard_header">
+            <Header />
+            <div className="add_Btn" onClick={openModal}>
+              <AiOutlinePlus />
+            </div>
           </div>
 
           <GroceryList
