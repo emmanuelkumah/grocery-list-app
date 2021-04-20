@@ -6,23 +6,24 @@ import Footer from "./components/Footer/Footer";
 import NavBar from "./components/Navigation/NavBar";
 import Dashboard from "./components/pages/Dashboard/Dashboard";
 import Home from "./components/pages/Home/Home";
-import SignUp from "./components/SignUp/SignUp";
 import Testimonials from "./components/Testimonials/Testimonials";
 import fire from "./services/firebase";
 import firebase from "firebase";
+import SignUp from "./components/SignUp/SignUp";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
 function App() {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(false);
 
   //helps clear user inputs on submit
   const clearInput = () => {
-    setUserName("");
+    setName("");
     setEmail("");
     setPassword("");
   };
@@ -61,7 +62,7 @@ function App() {
         let user = userCredentials.user;
         //update the user profile data
         return user.updateProfile({
-          displayName: userName,
+          displayName: name,
         });
       })
       .catch((error) => {
@@ -130,30 +131,36 @@ function App() {
         <NavBar />
         <Switch>
           <Route path="/" exact>
-            <Home />
+            {user ? <Redirect to="/dashboard" /> : <Home />}
           </Route>
           <Route path="/testimonials" component={Testimonials} />
           <Route path="/about" component={Cards} />
-          <Route path="/sign-up">
+
+          <Route path="/sign_up">
             <SignUp
+              name={name}
+              setName={setName}
               user={user}
+              setUser={setUser}
               email={email}
+              setEmail={setEmail}
               password={password}
-              userName={userName}
-              setUserName={setUserName}
-              // name={name}
-              // setName={setName}
+              setPassword={setPassword}
               emailError={emailError}
+              setEmailError={setEmailError}
               passwordError={passwordError}
-              hasAccount={hasAccount}
-              setHasAccount={setHasAccount}
+              setPasswordError={setPasswordError}
               signInWithGoogle={signInWithGoogle}
               handleSignUp={handleSignUp}
               handleSignIn={handleSignIn}
               handleLogOut={handleLogOut}
+              hasAccount={hasAccount}
+              setHasAccount={setHasAccount}
             />
           </Route>
-          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/dashboard">
+            <Dashboard user={user} handleLogOut={handleLogOut} />
+          </Route>
         </Switch>
         <Footer />
       </Router>

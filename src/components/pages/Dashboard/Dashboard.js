@@ -6,8 +6,9 @@ import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal/Modal";
 import fire from "../../../services/firebase";
 import firebase from "firebase";
+import { useHistory } from "react-router-dom";
 
-function Dashboard() {
+function Dashboard({ user, handleLogOut }) {
   const [item, setItem] = useState("");
   const [complete, setComplete] = useState(false);
   const [editing, setIsEditing] = useState(false);
@@ -30,34 +31,48 @@ function Dashboard() {
   useEffect(() => {
     const unsubscribe = fire
       .firestore()
+      .collection("users")
+      .doc(user.uid)
       .collection("groceries")
-      .orderBy("created", "desc")
-      .onSnapshot((snapshot) => {
+      .get()
+      .then((snapshot) => {
         const data = snapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
-        // update the groceries state value
+        //update the groceries state
         SetGroceries(data);
       });
+    // .orderBy("created", "desc")
   }, []);
 
-  //handle form submission
+  //add input field value to the db on submission
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    fire.firestore().collection("groceries").add({
-      //add item to the db on form submit
-      item: item,
-      isComplete: complete,
-      created: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    fire
+      .firestore()
+      .collection("users")
+      .doc(user.uid)
+      .collection("groceries")
+      .add({
+        //add item to the db on form submit
+        item: item,
+        isComplete: complete,
+        created: firebase.firestore.FieldValue.serverTimestamp(),
+      });
     //clear form input
     setItem("");
   };
 
   //remove item from db
   const removeItem = (id) => {
-    fire.firestore().collection("groceries").doc(id).delete();
+    fire
+      .firestore()
+      .collection("users")
+      .doc(user.uid)
+      .collection("groceries")
+      .doc(id)
+      .delete();
   };
 
   //mark item as completed
@@ -65,6 +80,8 @@ function Dashboard() {
     setComplete(!complete);
     fire
       .firestore()
+      .collection("users")
+      .doc(user.uid)
       .collection("groceries")
       .doc(id)
       .set(
@@ -90,6 +107,8 @@ function Dashboard() {
     //update the item with the new value
     fire
       .firestore()
+      .collection("users")
+      .doc(user.uid)
       .collection("groceries")
       .doc(id)
       .set(
@@ -106,6 +125,15 @@ function Dashboard() {
       });
   };
 
+  //redirect user to home page after log out
+  let history = useHistory();
+
+  const redirect = () => {
+    //logout user
+    handleLogOut();
+    //redirect user to home page after log out
+    history.push("/");
+  };
   return (
     <main>
       {isModalOpen ? (
@@ -120,8 +148,13 @@ function Dashboard() {
         />
       ) : (
         <section className="dashboard_container">
+          <div>
+            <button className="dashboard_logOut" onClick={redirect}>
+              Log out
+            </button>
+          </div>
           <div className="dashboard_header">
-            <Header />
+            <Header user={user} />
             <div className="add_Btn" onClick={openModal}>
               <AiOutlinePlus />
             </div>

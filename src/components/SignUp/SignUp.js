@@ -1,111 +1,122 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
-import "./SignUp.css";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 
-function SignUp(
-  // name,
-  // setName,
-  userName,
-  setUserName,
+import "./SignUp.css";
+function SignUp({
+  name,
+  setName,
+  user,
+  setUser,
   email,
   setEmail,
   password,
   setPassword,
   emailError,
+  setEmailError,
   passwordError,
+  setPasswordError,
   signInWithGoogle,
   handleSignUp,
-  handleSignIn
-) {
-  //set values for sign up
-  const [signUp, setSignUp] = useState(false);
+  handleSignIn,
+  handleLogOut,
+  hasAccount,
+  setHasAccount,
+}) {
+  const [signUp, setSignUp] = useState(true);
 
-  //Switch between signUp and signInform
-  const toggleSignUp = () => {
-    setSignUp(!signUp);
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  };
+  const [redirect, setredirect] = useState(null);
+
+  //redirect user to dashboard if logged in
+
+  useEffect(() => {
+    if (user) {
+      setredirect("/dashboard");
+    }
+  }, [user]);
+  if (redirect) {
+    return <Redirect to={redirect} />;
+    // setredirect(null);
+  }
   return (
-    <section className="formSection">
-      <div className={signUp ? "wrapper right-panel-active" : "wrapper"}>
-        <div className="form-container sign-up-container">
-          <form onSubmit={handleSubmit}>
-            <h1 className="heading">Sign Up</h1>
-            {/* <div className="social-container">
-              <h4>Sign Up With Google</h4>
-              <button className="social" onClick={signInWithGoogle}>
-                <span> Sign Up with Google</span> <br></br>
-                <FaGoogle />
-              </button>
-            </div>
-            <span>or use your email for registration</span> */}
+    <section className="login">
+      <div className="loginContainer">
+        <div className="form-toggle">
+          <button className="toggleSignUp" onClick={() => setSignUp(true)}>
+            Sign Up
+          </button>
+          <button className="toggleSignIn" onClick={() => setSignUp(false)}>
+            Sign In
+          </button>
+        </div>
+        {signUp ? (
+          <div>
+            <label>Full Name</label>
             <input
               type="text"
-              placeholder="Enter Your Name"
-              value={userName}
-              // onChange={(event) => setUserName(event.target.value)}
-            />
-            <input autoFocus type="email" placeholder="Enter Your Email" />
-            <p className="errorMsg">{emailError}</p>
-            <input
               autoFocus
-              type="password"
-              placeholder="Enter Your Password"
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
             />
-
-            <p className="errorMsg">{passwordError}</p>
-            <button
-              className="btn__signUp"
-              type="submit"
-              onClick={handleSignUp}
-            >
-              Sign Up
-            </button>
-          </form>
-        </div>
-        <div className="form-container sign-in-container">
-          <form>
-            <h1 className="heading">Sign In</h1>
-            <div className="social-container">
-              <h4>Sign in with Google</h4>
-              <button className="social">
-                <FaGoogle />
-              </button>
-            </div>
-            <span>or use your account</span>
-
-            <input autoFocus type="email" placeholder="Email" value={email} />
+            <label>Email</label>
+            <input
+              type="text"
+              autoFocus
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
             <p className="errorMsg">{emailError}</p>
-            <input autoFocus type="password" placeholder="Password" />
+            <label>Password</label>
+            <input
+              type="text"
+              autoFocus
+              required
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
             <p className="errorMsg">{passwordError}</p>
-            <button className="btn__signUp" onClick={handleSignIn}>
-              Sign In
-            </button>
-          </form>
-        </div>
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>Please login with your personal info</p>
-              <button className="btn__signUp ghost" onClick={toggleSignUp}>
-                Sign In
-              </button>
-            </div>
-            <div className="overlay-panel overlay-right">
-              <h1 className="heading">Hello, Friend!</h1>
-              <p>
-                Enter your details below and begin an awesome journey with us
-              </p>
-              <button className=" btn__signUp ghost" onClick={toggleSignUp}>
+            <div className="btnContainer">
+              <button className="signUp" onClick={handleSignUp}>
                 Sign Up
               </button>
             </div>
+            <button className="signUp" onClick={signInWithGoogle}>
+              <img
+                src="https://img.icons8.com/ios-filled/50/000000/google-logo.png"
+                alt="google icon"
+              />
+              <span> Sign Up with Google</span>
+            </button>
           </div>
-        </div>
+        ) : (
+          <div>
+            <label>Email</label>
+            <input
+              type="text"
+              autoFocus
+              required
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+            <p className="errorMsg">{emailError}</p>
+
+            <label>Password</label>
+            <input
+              type="text"
+              autoFocus
+              required
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+            <p className="errorMsg">{passwordError}</p>
+            <div className="btnContainer">
+              <button className="signIn" onClick={handleSignIn}>
+                Log In{" "}
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
