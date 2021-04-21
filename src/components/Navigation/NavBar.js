@@ -24,9 +24,6 @@ function NavBar() {
   useEffect(() => {
     showButton();
     window.addEventListener("resize", showButton);
-    // return {
-    //   window.removeEventListener('resize', showButton)
-    // }
   }, []);
 
   return (
@@ -36,7 +33,7 @@ function NavBar() {
           <div className="navbar-container container">
             <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
               <GiShoppingBag className="navbar-icon" />
-              Grocery Bag
+              Grocery/Bag
             </Link>
             <div className="menu-icon" onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
@@ -71,7 +68,7 @@ function NavBar() {
                     <Button buttonStyle="btn--outline">SIGN UP</Button>
                   </Link>
                 ) : (
-                  <Link to="/sign-up" className="btn-link">
+                  <Link to="/sign_up" className="btn-link">
                     <Button
                       buttonStyle="btn--outline"
                       buttonSize="btn--mobile"

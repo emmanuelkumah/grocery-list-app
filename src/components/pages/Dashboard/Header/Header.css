@@ -1,25 +1,22 @@
 .header_container {
   padding: 20px 20px;
   width: 100%;
-
   background-size: 100%;
   background-repeat: no-repeat;
-  background-image: radial-gradient(
-      circle 759px at -6.7% 50%,
-      rgba(80, 131, 73, 0.5) 0%,
-      rgba(140, 209, 131, 0.5) 26.2%,
-      rgba(178, 231, 170, 0.5) 50.6%,
-      rgb(60, 153, 48) 74.1%,
-      rgba(75, 118, 69, 1) 100.3%
-    ),
-    url("headerImg.jpg");
+  background: #e65c00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f9d423,
+    #e65c00
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f9d423, #e65c00), url("headerImg.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .header_greetings {
   margin: 10px;
   padding: 10px 30px;
 }
 .header_greetings > h2 {
-  color: #fff;
+  color: #080708;
   text-align: center;
   font-size: 1.8rem;
 }
@@ -27,6 +24,23 @@
   color: #fff;
   text-align: center;
   font-size: 1.3rem;
+}
+.headerImg_container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  /* border-radius: 50%; */
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+.header_img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+  /* border-radius: 50%; */
 }
 .addBtn {
   background-color: brown;

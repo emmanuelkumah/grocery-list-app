@@ -20,10 +20,14 @@ main {
   outline: none;
   border: none;
   border-radius: 5px;
-  background-color: #ff4365;
+  /* background-color: #ff4365; */
   padding: 5px;
   font-size: 1.5rem;
-  color: #fff;
+  color: #ff4500;
+}
+.dashboard_logOut:hover {
+  cursor: pointer;
+  color: #222;
 }
 
 .list {
@@ -80,6 +84,11 @@ main {
 }
 .complete {
   color: #6ab615;
+}
+.complete,
+.edit,
+.delete :hover {
+  cursor: pointer;
 }
 .complete:hover {
   color: #222;
@@ -144,10 +153,9 @@ Modal
   cursor: pointer;
 }
 /* input field */
-input[type="text"],
-input[type="number"] {
+input[type="text"] {
   border: none;
-  border-bottom: 2px solid #6ab615;
+  border-bottom: 2px solid #ffe200;
   display: block;
   font-size: 1.4rem;
   padding: 10px;
@@ -155,8 +163,8 @@ input[type="number"] {
   outline: none;
 }
 .add_Item {
-  background-color: #faa916;
-  background-image: linear-gradient(62deg, #faa916 0%, #ef8a17 100%);
+  background-color: #ff4500;
+  background-image: linear-gradient(62deg, #ff4500 0%, #ef8a17 100%);
   margin: 20px auto;
   padding: 10px;
   /* width: 20%; */
@@ -175,4 +183,39 @@ input[type="number"] {
 .mark_complete {
   text-decoration-line: line-through;
   text-decoration-color: #ff4364;
+}
+
+/* Media Queries */
+/* Extra small devices (portait phones) */
+@media only screen and (max-width: 575.98px) and (min-width: 351px) {
+  .dashboard_container {
+    width: 90vw;
+    margin: 2rem auto;
+  }
+  .modal-container {
+    width: 90vw;
+  }
+  input[type="text"] {
+    width: 80vw;
+  }
+}
+/* small devices (landscape phones)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .dashboard_container {
+    width: 90vw;
+    margin: 2rem auto;
+  }
+  .modal-container {
+    width: 90vw;
+  }
+  input[type="text"] {
+    width: 80vw;
+  }
+}
+/* tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .dashboard_container {
+    width: 80vw;
+    margin: 2rem auto;
+  }
 }

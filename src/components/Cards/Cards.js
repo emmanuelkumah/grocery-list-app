@@ -10,8 +10,8 @@ function Cards() {
       <div className="card-heading">
         <h1>Why Choose Us </h1>
         <p>
-          We provide you the most effective ways to list and organize your
-          grocery on a busy day
+          We provide you the most effective ways to list and organize and
+          complete your grocery on a busy day
         </p>
       </div>
 
@@ -21,8 +21,8 @@ function Cards() {
             <BiShoppingBag className="card-icons" />
             <h2>Plan Your Shopping</h2>
             <p>
-              Simply tap on ingredients to add them to your shopping list, or
-              plan for an entire week or month with our meal planning calendar.
+              Simply add groceries to your shopping list, or plan for an entire
+              week or month with our grocery planning calendar.
             </p>
           </div>
         </article>
@@ -44,9 +44,9 @@ function Cards() {
             <FiUsers className="card-icons" />
             <h2>Organize Your Grocery</h2>
             <p>
-              GroceryBag helps you organize your personal recipes and allows you
-              to easily add recipes from other sources, like email messages and
-              popular websites and blogs.
+              GroceryBag helps you organize your grocery and allows you to
+              easily add recipes from other sources, like email messages and
+              popular websites
             </p>
           </div>
         </article>

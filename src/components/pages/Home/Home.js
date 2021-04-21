@@ -11,7 +11,6 @@ function Home() {
       <Cards />
       <HeroSection {...homeObjThree} />
       <Testimonials />
-      {/* <Footer /> */}
     </>
   );
 }

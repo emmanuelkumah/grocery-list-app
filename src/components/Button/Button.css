@@ -1,5 +1,5 @@
 :root {
-  --primary: #faa916;
+  --primary: #ff4500;
 }
 
 .btn {
@@ -12,14 +12,15 @@
 }
 
 .btn--primary {
+  border-radius: 50px;
   background-color: var(--primary);
   color: #fff;
   border: 1px solid var(--primary);
 }
 
 .btn--outline {
-  background-color: #faa916;
-  color: #fff;
+  background: transparent;
+  color: #080708;
   padding: 8px 20px;
   border-radius: 50px;
   border: 1px solid var(--primary);
@@ -27,6 +28,7 @@
 }
 
 .btn--medium {
+  margin-right: 5%;
   padding: 8px 20px;
   font-size: 18px;
 }
@@ -58,14 +60,18 @@
 .btn--medium:hover,
 .btn--mobile:hover {
   transition: all 0.3s ease-out;
-  background: #fff;
-  color: #242424;
+  background: #ff4500;
+  color: #fff;
 }
 
 .btn--wide:hover {
   color: #fff;
   background-color: #242424;
   transition: all 0.2s ease-out;
+}
+.btn--primary:hover {
+  background: transparent;
+  color: #080708;
 }
 
 .btn-link {
@@ -78,22 +84,13 @@
   width: 100%;
 }
 
-.teal {
-  background-color: #1b8382;
-  color: #fff;
-  border: none;
-}
-
-.red {
-  background-color: #f00946;
-  color: #fff;
-  border: none;
-}
-
 .primary {
   background-color: #242424;
   color: #fff;
   border: none;
+}
+.secondary {
+  background: #25ce4a;
 }
 
 .primary:hover {
@@ -102,12 +99,8 @@
   border: none;
 }
 
-.green {
-  background: #25ce4a;
-  color: #fff;
-  border: none;
-}
-
-.green:hover {
-  background-color: #242424;
+@media screen and (max-width: 882px) {
+  .btn .btn--outline .btn--medium {
+    margin: 2px;
+  }
 }

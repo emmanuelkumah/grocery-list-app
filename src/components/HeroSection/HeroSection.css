@@ -2,9 +2,10 @@
   font-size: 5rem;
   font-family: "Noto Sans SC", sans-serif;
   font-weight: 300;
-  color: #270722;
+  color: #080708;
   padding: 20px 0;
-  background-color: #f7f7f9;
+  background-color: #ffe200;
+  background-image: linear-gradient(62deg, #ffe200 0%, #f7ce68 100%);
 }
 
 .home__hero-row {
@@ -36,8 +37,8 @@
 }
 
 .top-line {
-  color: #160f29;
-  font-family: "Noto Sans SC", sans-serif;
+  color: #ff4500;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
@@ -52,11 +53,11 @@
   font-family: "Noto Sans SC", sans-serif;
   font-weight: 600;
   line-height: 1.1;
-  color: #54a81c;
+  color: #080708;
 }
 
 .dark {
-  color: #54a81c;
+  color: #080708;
 }
 
 .altBg {
@@ -91,9 +92,12 @@ img {
 }
 
 @media screen and (max-width: 991px) {
-  .container {
+  /* .container {
     padding-right: 30px;
     padding-left: 30px;
+  } */
+  .top-line {
+    margin-top: 20%;
   }
 }
 

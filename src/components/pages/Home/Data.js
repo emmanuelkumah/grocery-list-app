@@ -5,10 +5,11 @@ export const homeObjOne = {
   lightTextDesc: true,
   topLine: "Prep for the week, stock your fridge and pantry",
   headline: "Plan what you need, when you need it",
-  buttonLabel: "Get Started",
+  buttonLabel_1: "Get Started",
+  buttonLabel_2: "Find out more",
   imgStart: "",
   img: "images/groceryBag.png",
-  alt: "Budget",
+  alt: "shopping",
   description:
     "The best way to create and share a grocery shopping list and organize your recipes",
 };
@@ -23,33 +24,19 @@ export const homeObjTwo = {
   buttonLabel: "Learn More",
   imgStart: "",
   img: "images/svg-5.svg",
-  alt: "Vault",
+  alt: "shopping-bag",
 };
 
 export const homeObjThree = {
   lightBg: false,
   lightText: false,
   lightTextDesc: false,
-  // topLine: "EASY SETUP",
-  headline: "List, Sort, Complete ",
+  headline: "List, Edit, Complete ",
   description:
-    "List all the essentials needed for the long quarantine  and purchase online to avoid catching the virus",
-  buttonLabel: "Find Out More",
+    "List all the essentials, mark purchased item as complete and even edit item whiles on the go",
+  buttonLabel_1: "Get Started",
+  buttonLabel_2: "Find out more",
   imgStart: "start",
   img: "images/grocery4.png",
-  alt: "Vault",
-};
-
-export const homeObjFour = {
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
-  topLine: "DATA ANALYTICS",
-  headline: "Every transaction is stored on our secure cloud database",
-  description:
-    "Never ever have to worry again about saved reciepts. We store your data, so you can access it anytime.",
-  buttonLabel: "Sign Up Now",
-  imgStart: "start",
-  img: "images/svg-8.svg",
-  alt: "Vault",
+  alt: "shopping-bag",
 };

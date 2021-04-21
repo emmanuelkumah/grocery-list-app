@@ -7,6 +7,7 @@ import Modal from "./Modal/Modal";
 import fire from "../../../services/firebase";
 import firebase from "firebase";
 import { useHistory } from "react-router-dom";
+import { SiGravatar } from "react-icons/si";
 
 function Dashboard({ user, handleLogOut }) {
   const [item, setItem] = useState("");
@@ -148,13 +149,11 @@ function Dashboard({ user, handleLogOut }) {
         />
       ) : (
         <section className="dashboard_container">
-          <div>
-            <button className="dashboard_logOut" onClick={redirect}>
-              Log out
-            </button>
+          <div className="dashboard_logOut" onClick={handleLogOut}>
+            <SiGravatar /> Log out
           </div>
           <div className="dashboard_header">
-            <Header user={user} />
+            <Header user={user} groceries={groceries} />
             <div className="add_Btn" onClick={openModal}>
               <AiOutlinePlus />
             </div>
