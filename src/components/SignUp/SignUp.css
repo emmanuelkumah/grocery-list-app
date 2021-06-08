@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(90deg, #ffe200 0%, #fad352 100%);
+  background: #ffd9ce;
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
 
@@ -70,20 +70,18 @@
   border: none;
 }
 button.toggleSignUp {
-  background: #ff4500;
+  background: #db5461;
   /* border: 1px solid; */
 
   /* background-color: #8dd06f; */
   border-color: #ffffff;
 }
 button.toggleSignUp:hover {
-  background-color: #8dd06f;
+  background-color: #db5461;
   color: #fff;
 }
 button.toggleSignIn:hover {
-  /* border: 1px solid #ff4500; */
-
-  background-color: #8dd06f;
+  background-color: #db5461;
   color: #fff;
 }
 
@@ -98,7 +96,7 @@ button.toggleSignIn:hover {
   font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: 1px;
-  background: #8dd06f;
+  background: #db5461;
   cursor: pointer;
 }
 .signUp:hover,

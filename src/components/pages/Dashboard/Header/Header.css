@@ -9,7 +9,13 @@
     #f9d423,
     #e65c00
   ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f9d423, #e65c00), url("headerImg.jpg"); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: linear-gradient(
+      109.6deg,
+      rgba(249, 249, 147, 1) 11.2%,
+      rgba(252, 84, 84, 1) 91.1%
+    ),
+    url("headerImg.jpg");
+  /* background: linear-gradient(to right, #f9d423, #e65c00), url("headerImg.jpg"); */
 }
 .header_greetings {
   margin: 10px;

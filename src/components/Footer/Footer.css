@@ -21,7 +21,7 @@
 /* The company logo */
 
 .footer-container h3 {
-  color: #ffe200;
+  color: #db5461;
   margin: 0;
 }
 
@@ -56,7 +56,7 @@
 .footer-contact-icons {
   padding-top: 10px;
   margin-right: 20px;
-  color: #ffe200;
+  color: #db5461;
   font-size: 2rem;
   line-height: 38px;
 }
@@ -97,7 +97,7 @@
 
 .footer-container .footer-company-about span {
   display: block;
-  color: #ffe200;
+  color: #db5461;
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 20px;

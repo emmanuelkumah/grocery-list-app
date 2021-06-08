@@ -2,7 +2,12 @@
 
 .testimonials-container {
   background-color: #85ffbd;
-  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(249, 249, 147, 1) 11.2%,
+    rgba(252, 84, 84, 1) 91.1%
+  );
+  /* background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%); */
   padding: 4rem 0 2rem 0;
   display: flex;
   flex-direction: column;
